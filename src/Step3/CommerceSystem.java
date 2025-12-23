@@ -20,7 +20,13 @@ public class CommerceSystem {
         List<Product> products = category.getProducts();
 
         for (int i = 0; i < products.size(); i++) {
-            System.out.println(i);
+            // getter 제품 정보 출력
+            Product p = products.get(i);
+            System.out.println("[1] " +p.getName()+" | "+p.getPrice() +"원 " +" | "+p.getAccount());
+            System.out.println("[2] " +p.getName()+" | "+p.getPrice()+"원 " +" | "+p.getAccount());
+            System.out.println("[3] " +p.getName()+" | "+p.getPrice()+"원 " +" | "+p.getAccount());
+            System.out.println("[4] " +p.getName()+" | "+p.getPrice()+"원 " +" | "+p.getAccount());
+            System.out.println("[0] " + "프로그램 종료");
         }
 
         // 종료 및 상품 번호 입력 받기
@@ -30,8 +36,10 @@ public class CommerceSystem {
         if (answer.equals("0")){
             System.out.println("플랫폼을 종료합니다.");
             return;
-        } else {
-            category.get(Integer.parseInt(answer)-1);
         }
+
+        int index = Integer.parseInt(answer) -1;
+        Product product = products.get(index);
+
     }
 }
